@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmotionAI | Decode Your Feelings</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+
+    <div class="container">
+
+        <!-- Hero -->
+
+<div class="hero">
+
+    <h1>🤖 EmotionAI</h1>
+
+    <p>
+        Understand emotions instantly with Artificial Intelligence.
+    </p>
+
+</div>
+
+        <!-- Main Card -->
+
+        <div class="glass-card">
+
+            <form action="/predict" method="POST">
+
+                <label>
+                    What's on your mind today?
+                </label>
+
+                <textarea
+                    name="text"
+                    id="emotionText"
+                    placeholder="Type how you're feeling today..."
+                    required>{{ text if text else "" }}</textarea>
+
+                <div class="counter">
+                    <span id="count">0</span>/500 Characters
+                </div>
+
+                <button type="submit">
+                        ✨ Analyze Emotion
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- Example Prompts -->
+
+        <div class="examples">
+
+            <h3>✨ Try these</h3>
+
+            <div class="chips">
+
+                <span onclick="fillText(this)">
+                    I got my dream job today!
+                </span>
+
+                <span onclick="fillText(this)">
+                    I feel so lonely today.
+                </span>
+
+                <span onclick="fillText(this)">
+                    I am really angry right now.
+                </span>
+
+                <span onclick="fillText(this)">
+                    I love spending time with my family.
+                </span>
+
+                <span onclick="fillText(this)">
+                    I am scared about tomorrow's interview.
+                </span>
+
+            </div>
+
+        </div>
+
+
+<!-- Prediction -->
+
+{% if prediction %}
+
+<div class="result-card">
+
+    <h2>Detected Emotion</h2>
+
+    <div class="emoji">
+        {{ emoji }}
+    </div>
+
+    <h1 style="color: {{ color }};">
+        {{ prediction|capitalize }}
+    </h1>
+
+    <p class="ai-message">
+        {{ message }}
+    </p>
+
+    <div class="progress">
+        <div
+            class="progress-fill"
+            style="width: {{ confidence }}%; background: {{ color }};">
+        </div>
+    </div>
+
+    <h3>{{ confidence }}% Confidence</h3>
+
+</div>
+
+{% endif %}
+        
+
+        
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
