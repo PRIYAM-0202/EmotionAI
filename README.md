@@ -13,7 +13,7 @@ EmotionAI is an AI-powered web application that detects human emotions from text
 
 🚀 **Live Website:** *(Add your Render URL here after deployment)*
 
-🔗 https://your-app-name.onrender.com
+🔗 https://emotionai-1-v8c8.onrender.com/
 
 ---
 
@@ -183,11 +183,14 @@ http://127.0.0.1:5000
 
 **Priyam Singh**
 
-📧 Email: *your-email@example.com*
+📧 Email: *singhpriyam954@gmail.com*
 
-🔗 LinkedIn: https://www.linkedin.com/in/your-profile/
+🔗 LinkedIn: www.linkedin.com/in/
+priyam-singh-288884326
+Vanity URL name
 
-💻 GitHub: https://github.com/yourusername
+
+💻 GitHub: https://github.com/PRIYAM-0202
 
 ---
 
